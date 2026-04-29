@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Era RP | V3 Official Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --pure-black: #000000;
+            --dark-grey: #0a0a0a;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background: var(--pure-black);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Video Background */
+        .video-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none; overflow: hidden;
+        }
+        .video-bg iframe {
+            width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.5), var(--pure-black)); z-index: 0;
+        }
+
+        /* Nav */
+        nav {
+            position: absolute; top: 0; width: 100%; padding: 30px 0;
+            display: flex; justify-content: center; gap: 40px; z-index: 10;
+        }
+        nav a {
+            color: #fff; text-decoration: none; text-transform: uppercase;
+            font-weight: bold; font-size: 0.85rem; letter-spacing: 3px;
+            transition: 0.3s; opacity: 0.7;
+        }
+        nav a:hover { color: var(--gold); opacity: 1; text-shadow: 0 0 10px var(--gold-glow); }
+
+        /* Hero */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; z-index: 1; position: relative;
+        }
+        .logo { width: 320px; filter: drop-shadow(0 0 25px rgba(0,0,0,0.8)); margin-bottom: 25px; }
+        h1 { font-size: 3.8rem; letter-spacing: 18px; text-transform: uppercase; margin: 0; 
+             background: linear-gradient(to bottom, #fff, var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .btn-group { margin-top: 45px; display: flex; gap: 25px; }
+        .btn { padding: 18px 40px; text-decoration: none; color: #fff; border: 1px solid var(--gold);
+               text-transform: uppercase; font-weight: 900; letter-spacing: 3px; transition: 0.3s; }
+        .btn-gold { background: var(--gold); color: #000; }
+        .btn-gold:hover { background: #fff; border-color: #fff; }
+
+        /* General Section Layout */
+        .section { padding: 120px 10%; position: relative; z-index: 2; background: var(--pure-black); }
+        .section-title { text-align: center; color: var(--gold); text-transform: uppercase; 
+                         letter-spacing: 8px; font-size: 2.2rem; margin-bottom: 70px; }
+
+        /* Application Grid */
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1400px; margin: 0 auto; }
+        .app-card { background: var(--dark-grey); padding: 50px 20px; text-align: center; border: 1px solid #1a1a1a; transition: 0.4s; text-decoration: none; color: #fff; }
+        .app-card:hover { border-color: var(--gold); background: #000; transform: scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .app-card h3 { color: var(--gold); margin-bottom: 15px; letter-spacing: 2px; }
+
+        /* Prio Table - Dark Theme */
+        .prio-container { max-width: 900px; margin: 0 auto; background: var(--dark-grey); border: 1px solid #1a1a1a; padding: 20px; }
+        .prio-table { width: 100%; border-collapse: collapse; }
+        .prio-table tr { border-bottom: 1px solid #151515; }
+        .prio-table td { padding: 22px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; }
+        .price { color: var(--gold); text-align: right; font-size: 1.1rem; }
+
+        /* Streamer Hub */
+        .stream-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; }
+        .stream-card { background: var(--dark-grey); border: 1px solid #151515; overflow: hidden; }
+        .featured-card { grid-column: 1 / -1; border: 1px solid var(--gold); }
+        .video-box { position: relative; padding-bottom: 56.25%; height: 0; background: #000; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        footer { padding: 80px; text-align: center; background: var(--pure-black); border-top: 1px solid #111; font-size: 0.75rem; color: #444; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <div class="video-bg">
+        <div class="overlay"></div>
+        <iframe src="https://www.youtube.com/embed/0nzOr764eAM?autoplay=1&mute=1&loop=1&playlist=0nzOr764eAM&controls=0&modestbranding=1" frameborder="0"></iframe>
+    </div>
+
+    <nav>
+        <a href="#applications">Applications</a>
+        <a href="#prio">Subscriptions</a>
+        <a href="#streams">Live Now</a>
+        <a href="https://new-era.tebex.io/" target="_blank">Store</a>
+    </nav>
+
+    <section class="hero">
+        <img src="YOUR_LOGO_URL" class="logo" alt="NEW ERA V3">
+        <h1>NEW ERA RP</h1>
+        <div style="color: var(--gold); letter-spacing: 6px; font-weight: bold;">STATUS: <span style="color:#00ff00; text-shadow: 0 0 10px #00ff00;">ONLINE</span></div>
+        <div class="btn-group">
+            <a href="https://discord.gg/yourlink" class="btn btn-gold">Join Discord</a>
+            <a href="https://new-era.tebex.io/" class="btn">Store</a>
+        </div>
+    </section>
+
+    <section class="section" id="applications">
+        <h2 class="section-title">Join The City</h2>
+        <div class="app-grid">
+            <a href="https://forms.gle/L35P75VPmVNFhEou7" target="_blank" class="app-card"><h3>Whitelist</h3><p>Start your journey</p></a>
+            <a href="https://forms.gle/nBXQgQEByQgrt4cG9" target="_blank" class="app-card"><h3>Police Dept</h3><p>Join the LSPD/BCSO</p></a>
+            <a href="https://forms.gle/aAWLX61EgXSmw5kr8" target="_blank" class="app-card"><h3>EMS Medical</h3><p>Support the community</p></a>
+            <a href="https://forms.gle/FE5wASmjVPhDH1bL9" target="_blank" class="app-card"><h3>Content Creator</h3><p>Official Partnership</p></a>
+        </div>
+    </section>
+
+    <section class="section" id="prio">
+        <h2 class="section-title">Subscription Tiers</h2>
+        <div class="prio-container">
+            <table class="prio-table">
+                <tr><td>New Era Streamer</td><td class="price">850</td></tr>
+                <tr><td>NE ⏐ T5 Prio</td><td class="price">500</td></tr>
+                <tr><td>NE ⏐ T4 Prio</td><td class="price">300</td></tr>
+                <tr><td>NE ⏐ T3 Prio</td><td class="price">225</td></tr>
+                <tr><td>Content Creator +</td><td class="price">175</td></tr>
+                <tr><td>NE ⏐ T2 Prio</td><td class="price">135</td></tr>
+                <tr><td>Content Creator</td><td class="price">100</td></tr>
+                <tr><td>NE ⏐ T1 Prio</td><td class="price">75</td></tr>
+                <tr><td>Vanity Prio</td><td class="price">20</td></tr>
+                <tr><td>Server Booster</td><td class="price">15</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="section" id="streams">
+        <h2 class="section-title">Featured Streamers</h2>
+        <div class="stream-grid" id="stream-list">
+            <div class="stream-card featured-card">
+                <div class="video-box">
+                    <iframe src="https://player.twitch.tv/?channel=bigiraq&parent=localhost&muted=true" frameborder="0"></iframe>
+                </div>
+                <div style="padding:20px; font-weight:900; text-align:center; background: var(--gold); color: #000; letter-spacing: 4px;">FEATURED: BIGIRAQ</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 NEW ERA ROLEPLAY V3 | ALL SALES FINAL</p>
+        <p style="margin-top:10px;">RULES • PRIVACY • TOS • REFUNDS</p>
+    </footer>
+
+    <script>
+        // Add more streamers here
+        const extraStreamers = ["streamer_one", "streamer_two"];
+        const grid = document.getElementById('stream-list');
+        const currentHost = window.location.hostname || 'localhost';
+
+        extraStreamers.forEach(s => {
+            const div = document.createElement('div');
+            div.className = 'stream-card';
+            div.innerHTML = `
+                <div class="video-box"><iframe src="https://player.twitch.tv/?channel=${s}&parent=${currentHost}&muted=true" frameborder="0"></iframe></div>
+                <div style="padding:20px; text-align:center; letter-spacing:2px; font-weight:bold;">${s.toUpperCase()}</div>
+            `;
+            grid.appendChild(div);
+        });
+    </script>
+</body>
+</html>
